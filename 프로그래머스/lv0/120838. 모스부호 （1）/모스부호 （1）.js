@@ -7,5 +7,5 @@ function solution(letter) {
     '-.--':'y','--..':'z'
     }
     
-    return letter.split(' ').map(s => morse[s]).join('')
+    return letter.split(' ').reduce((pre, cur) => pre + morse[cur], '')
 }
