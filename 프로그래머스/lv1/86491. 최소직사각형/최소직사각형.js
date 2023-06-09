@@ -12,8 +12,8 @@ function solution(sizes) {
         }
     }
 
-    let biggerSideMax = Math.max(...longer);
-    let smallerSideMax = Math.max(...shorter);
+    let bigSideMax = Math.max(...longer);
+    let smallSideMax = Math.max(...shorter);
     
-    return biggerSideMax * smallerSideMax;
+    return bigSideMax * smallSideMax;
 }
