@@ -1,14 +1,8 @@
 function solution(s) {
-    const answer = []
-    for(let i = 0; i < s.length; i++) {
-        if (s.slice(0, i).indexOf(s[i]) === -1) {
-            answer.push(s.slice(0, i).indexOf(s[i]))
-        }
-        
-        if (s.slice(0, i).indexOf(s[i]) !== -1) {
-            answer.push(s.slice(0, i + 1).lastIndexOf(s[i]) - s.slice(0, i).lastIndexOf(s[i]))  
-        }
-    }
+    return [...s].map((str, i) => {
+        let count = s.slice(0, i).lastIndexOf(str)
+        return count < 0 ? count : i - count
+    })
     
     return answer
 }
