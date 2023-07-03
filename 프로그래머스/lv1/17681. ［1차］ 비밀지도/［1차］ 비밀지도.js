@@ -1,7 +1,7 @@
 function solution(n, arr1, arr2) {
     arr1 = arr1.map((v, i) => {
         let two = ((v | arr2[i]).toString(2))
-        console.log(two)
+ 
         two = two.replaceAll('1', '#')
         two = two.replaceAll('0', ' ')
         
