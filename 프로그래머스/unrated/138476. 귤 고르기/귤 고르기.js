@@ -4,17 +4,16 @@ function solution(k, tangerine) {
     let count = {}
     let arr = []
     
-    tangerine.forEach((num) => {
-        if (count[num] >= 1) count[num] += 1
-        else count[num] = 1
-    })
+    tangerine.forEach((num) => count[num] ? count[num] += 1 : count[num] = 1) 
     
     arr = Object.values(count)
+    
     arr.sort((a, b) => b - a)
     
-    for (let i = 0; i < arr.length; i++) {
-        total += arr[i]
-        if (total >= k) return answer = i + 1
+    for (const num of arr) {
+        answer++
+        if (k > num) k -= num
+        else break
     }
     
     return answer
