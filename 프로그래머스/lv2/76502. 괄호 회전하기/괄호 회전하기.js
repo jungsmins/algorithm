@@ -1,5 +1,5 @@
 function solution(s) {
-    let count = '';
+    let count = 0;
     s = s.split('')
     for (let i = 0; i < s.length; i++) {
         count += checked(s)
@@ -18,10 +18,10 @@ function solution(s) {
             } else arr.push(str[i])
         }
 
-        return arr.length === 0 ? 'O' : 'X'
+        return arr.length === 0 ? 1 : 0
     }
     
-    return count.replaceAll('X', '').length
+    return count
 }
 
 // 첫번째 문자를 넣고 2번째 문자 혹은 마지막 문자가 닫는 문자라면 배열에 넣고
