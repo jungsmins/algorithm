@@ -1,20 +1,12 @@
 function solution(elements) {
-    let arr = []
-    const Length = elements.length
-    const newElements = elements.concat(elements)
-
-    for (let i = 1; i < Length + 1; i++) {
-        for (let j  = 0; j < Length; j++) {
-            arr.push(sum(newElements.slice(j, i + j)))
+    const circular = elements.concat(elements);
+    const set = new Set();
+    for (let i = 0; i < elements.length; i++) {
+        let sum = 0;
+        for (let j = 0; j < elements.length; j++) {
+            sum += circular[i + j];
+            set.add(sum);
         }
     }
-    
-    function sum(arr2) {
-        let num = 0;
-        arr2.forEach((n) => num += n)
-        return num
-    }
-        
-    
-    return new Set(arr).size
+    return set.size;
 }
