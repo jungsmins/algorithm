@@ -16,5 +16,5 @@ function solution(elements) {
     }
         
     
-    return [...new Set(arr)].length
+    return new Set(arr).size
 }
