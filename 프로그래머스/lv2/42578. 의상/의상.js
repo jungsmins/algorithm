@@ -1,6 +1,9 @@
 function solution(clothes) {
-    return Object.values(clothes.reduce((ac, [_, k]) => {
-        ac[k] = (ac[k] ?? 0) + 1;
-        return ac;
-    }, {})).reduce((ac, v) => ac * (v + 1), 1) - 1;
+    let check = {}
+    for (let i = 0; i < clothes.length; i++) {
+        if (check[clothes[i][1]] > 0) check[clothes[i][1]]++
+        else check[clothes[i][1]] = 1
+    }
+    
+    return Object.values(check).reduce((ac, v) => ac * (v + 1), 1) - 1
 }
