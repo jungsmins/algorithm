@@ -18,11 +18,10 @@ function solution(answers) {
     }
     
     const max = Math.max(...score);
-    for (let j = 0; j < score.length; j++) {
-        if (score[j] === max) {
-            answer.push(j + 1);
-        }
-    }
+    
+    if (score[0] === max) answer.push(1)
+    if (score[1] === max) answer.push(2)
+    if (score[2] === max) answer.push(3)
     
     return answer;
 }
