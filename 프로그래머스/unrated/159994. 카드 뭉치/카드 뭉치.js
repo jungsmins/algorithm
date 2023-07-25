@@ -3,15 +3,12 @@ function solution(cards1, cards2, goal) {
     for (let i = 0; i < goal.length; i++) {
         if (cards1[0] === goal[i]) {
             cards1.shift()
-            count++
-            continue
         } else if (cards2[0] === goal[i]) {
             cards2.shift()
-            count++
-            continue
+        } else {
+            return 'No'
         }
-        break;
     }
     
-    return count === goal.length ? 'Yes' : 'No'
+    return 'Yes'
 }
