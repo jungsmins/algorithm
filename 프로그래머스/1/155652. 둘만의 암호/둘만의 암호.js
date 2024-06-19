@@ -5,8 +5,6 @@ function solution(s, skip, index) {
     
     arr = arr.filter((a) => !skip.includes(a))
     
-    console.log(arr)
-    
     for (let i = 0; i < s.length; i++) {
         let check = arr.indexOf(s[i]) + index
 
@@ -14,10 +12,8 @@ function solution(s, skip, index) {
             check = check % arr.length;
         } 
         
-        
         newWord.push(arr[check])
     }
     
-    console.log(newWord)
     return newWord.join('')
 }
